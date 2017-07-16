@@ -450,6 +450,11 @@ template {
   display: none;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #333;
@@ -555,6 +560,7 @@ img {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
 }
 
 .wrapper--medium {
@@ -630,4 +636,30 @@ img {
 
 .headline--b-margin-large {
     margin-bottom: 1.6em;
+  }
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.row--gutters {
+    margin-right: -65px;
+  }
+
+.row--gutters > div {
+    padding-right: 65px;
+  }
+
+@media (min-width: 800px) {
+    .row__medium-4 {
+      float: left;
+      width: 33%;
+    }
+
+    .row__medium-8 {
+      float: left;
+      width: 66%;
+    }
   }
