@@ -65,24 +65,47 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var $ = __webpack_require__(1);
-var Person = __webpack_require__(2);
-
-
-var john = new Person("John Doe", "blue");
-john.greet();
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_MobileMenu__ = __webpack_require__(1);
 
 
-var jane = new Person("Jane Smith", "green");
-jane.greet();
-
-$("h1").remove();
+var mobileMenu = new __WEBPACK_IMPORTED_MODULE_0__modules_MobileMenu__["a" /* default */]();
 
 
 /***/ }),
 /* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+class MobileMenu {
+  constructor() {
+    this.menuIcon = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".site-header__menu-icon");
+    this.menuContent = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(".site-header__menu-content");
+    this.events();
+  }
+
+  events() {
+    this.menuIcon.click(this.toggleTheMenu.bind(this));
+  }
+
+  toggleTheMenu() {
+    this.menuContent.toggleClass("site-header__menu-content--is-visible");
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (MobileMenu);
+
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10339,21 +10362,6 @@ if ( !noGlobal ) {
 
 return jQuery;
 } );
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-function Person(fullName, favColour) {
-  this.name = fullName;
-  this.favouriteColor = favColour;
-  this.greet = function() {
-    console.log("Hello, my name is " + this.name + " and my favourite colour is " + this.favouriteColor + ".");
-  }
-}
-
-module.exports = Person;
 
 
 /***/ })
